@@ -10,6 +10,11 @@
 #import "Country.h"
 #import "City.h"
 
+static NSInteger worldWidth = 10;
+static NSInteger worldHeight = 10;
+static NSInteger initialCoinsAmount = 1000000;
+static NSInteger worldLifetime = 100000;
+
 @interface World ()
 
 @property NSArray *countries;
@@ -41,10 +46,9 @@
         for (NSInteger i = (xl - 1); i <= (xh - 1); i++) {
             for (NSInteger j = (yl - 1); j <= (yh - 1); j++) {
                 City *city = [[City alloc] init];
-                city.country = country;
                 city.x = i;
                 city.y = j;
-                city.coins = [NSMutableDictionary dictionaryWithDictionary:@{name: @(1000000)}];
+                city.coins = [NSMutableDictionary dictionaryWithDictionary:@{name: @(initialCoinsAmount)}];
                 
                 self.coordinates[i][j] = city;
                 [cities addObject:city];
@@ -58,8 +62,8 @@
     
     self.countries = countries;
     
-    for (NSInteger i = 0; i < 10; i++) {
-        for (NSInteger j = 0; j < 10; j++) {
+    for (NSInteger i = 0; i < worldWidth; i++) {
+        for (NSInteger j = 0; j < worldHeight; j++) {
             if ([self.coordinates[i][j] isKindOfClass:[NSNull class]] == NO) {
                 City *city = self.coordinates[i][j];
                 
@@ -77,7 +81,7 @@
     
     [self checkCompletion];
     
-    while (([self allCountriesComplete] == NO) && (self.currentDay <= 99999)) {
+    while (([self allCountriesComplete] == NO) && (self.currentDay < worldLifetime)) {
         [self startNewDay];
         [self checkCompletion];
     }
@@ -126,7 +130,8 @@
     }
     
     for (NSString *countryName in completedCountries) {
-        self.result = [self.result stringByAppendingString:[NSString stringWithFormat:@"\n%@ %ld", countryName, self.currentDay]];
+        NSString *countryResult = [NSString stringWithFormat:@"\n%@ %ld", countryName, self.currentDay];
+        self.result = [self.result stringByAppendingString:countryResult];
     }
 }
 
@@ -147,7 +152,7 @@
 }
 
 - (City *)cityWithCoordinateX:(NSInteger)x andY:(NSInteger)y {
-    if ((x >= 0) && (x <= 9) && (y >= 0) && (y <= 9)) {
+    if ((x >= 0) && (x < worldWidth) && (y >= 0) && (y < worldHeight)) {
         return ([self.coordinates[x][y] isKindOfClass:[NSNull class]]) ? nil : self.coordinates[x][y];
     } else {
         return nil;
@@ -156,9 +161,9 @@
 
 - (NSArray *)createEmptyCoordinates {
     NSMutableArray *coordinatesX = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < worldWidth; i++) {
         NSMutableArray *coordinatesY = [[NSMutableArray alloc] init];
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < worldHeight; j++) {
             [coordinatesY addObject:[NSNull null]];
         }
         [coordinatesX addObject:coordinatesY];

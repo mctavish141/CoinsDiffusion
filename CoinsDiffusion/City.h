@@ -11,7 +11,6 @@
 
 @interface City : NSObject
 
-@property Country *country;
 @property NSInteger x;
 @property NSInteger y;
 @property NSArray *neighbours;
@@ -19,9 +18,6 @@
 @property NSMutableDictionary *incomingCoins;
 @property NSMutableDictionary *outcomingCoins;
 @property BOOL complete;
-
-- (NSString *)stringFromCity;
-+ (NSString *)stringFromCoins:(NSDictionary *)coins;
 
 - (void)transportDailyCoins;
 - (void)prepareIncomingCoins:(NSInteger)coins withCountryName:(NSString *)countryName;

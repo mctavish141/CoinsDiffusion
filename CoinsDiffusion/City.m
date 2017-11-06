@@ -20,18 +20,6 @@
     return self;
 }
 
-- (NSString *)stringFromCity {
-    return [NSString stringWithFormat:@"x: %ld, y: %ld\ncountry: %@\nneighbours: %ld\n%@", self.x, self.y, self.country.name, self.neighbours.count, [[self class] stringFromCoins:self.coins]];
-}
-
-+ (NSString *)stringFromCoins:(NSDictionary *)coins {
-    NSString *string = @"coins:";
-    for (NSString *countryName in coins.allKeys) {
-        string = [string stringByAppendingString:[NSString stringWithFormat:@"\nof %@: %ld", countryName, [coins[countryName] integerValue]]];
-    }
-    return string;
-}
-
 - (void)transportDailyCoins {
     for (NSString *countryName in self.coins.allKeys) {
         NSInteger countryCoins = [self.coins[countryName] integerValue];

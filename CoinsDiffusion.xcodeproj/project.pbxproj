@@ -11,6 +11,7 @@
 		B41BA56D1F9CBF8D00A6D394 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = B41BA56C1F9CBF8D00A6D394 /* City.m */; };
 		B41BA5701F9CC01600A6D394 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = B41BA56F1F9CC01600A6D394 /* Country.m */; };
 		B41BA5731F9CC08C00A6D394 /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = B41BA5721F9CC08C00A6D394 /* World.m */; };
+		B45094871FB10B6C009DB31F /* InputReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B45094861FB10B6C009DB31F /* InputReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		B41BA56F1F9CC01600A6D394 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 		B41BA5711F9CC08C00A6D394 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		B41BA5721F9CC08C00A6D394 /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
+		B45094851FB10B6C009DB31F /* InputReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputReader.h; sourceTree = "<group>"; };
+		B45094861FB10B6C009DB31F /* InputReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputReader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				B41BA56F1F9CC01600A6D394 /* Country.m */,
 				B41BA5711F9CC08C00A6D394 /* World.h */,
 				B41BA5721F9CC08C00A6D394 /* World.m */,
+				B45094851FB10B6C009DB31F /* InputReader.h */,
+				B45094861FB10B6C009DB31F /* InputReader.m */,
 			);
 			path = CoinsDiffusion;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41BA56D1F9CBF8D00A6D394 /* City.m in Sources */,
+				B45094871FB10B6C009DB31F /* InputReader.m in Sources */,
 				B41BA5701F9CC01600A6D394 /* Country.m in Sources */,
 				B41BA5731F9CC08C00A6D394 /* World.m in Sources */,
 				B41BA5651F9CB54200A6D394 /* main.m in Sources */,
@@ -269,6 +275,7 @@
 				B41BA56A1F9CB54200A6D394 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
